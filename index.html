@@ -94,9 +94,30 @@ img,svg{max-width:100%;}
 .back-btn:hover{background:var(--gold); color:#111;}
 .gallery-title{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:clamp(28px,6vw,44px); letter-spacing:1px; color:var(--cream); margin:0 0 14px;}
 .gallery-placeholder{color:#c9c3b0; font-family:'JetBrains Mono',monospace; font-size:14px; letter-spacing:.3px;}
-.gallery-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; margin-top:24px; text-align:left;}
-.gallery-grid img{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:2px; box-shadow:0 8px 20px rgba(0,0,0,.4);
-  filter:contrast(1.03) saturate(.95); transition:transform .3s ease;}
+.gallery-grid{
+  columns: 3;
+  column-gap: 14px;
+  margin-top: 24px;
+}
+.gallery-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 14px;
+  break-inside: avoid;
+  border-radius: 2px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.4);
+  filter: contrast(1.03) saturate(.95);
+  transition: transform .3s ease;
+}
+.gallery-grid img:hover{ transform: scale(1.02); }
+
+@media (max-width: 700px){
+  .gallery-grid{ columns: 2; }
+}
+@media (max-width: 450px){
+  .gallery-grid{ columns: 1; }
+}
 .gallery-grid img:hover{transform:scale(1.02);}
 [data-page="gallery"] #page-home{display:none;}
 [data-page="home"] #page-gallery{display:none;}
@@ -154,9 +175,7 @@ html[data-mode="boring"], html[data-mode="boring"] body{background-image:none; b
       <img src="images/ta-prohm.jpg"      alt="ta prohm temple roots">
       <img src="images/marina.jpg"        alt="boats in the marina">
       <img src="images/beacon-hill.jpg"   alt="beacon hill cobblestone street">
-      <img src="images/graduation.jpg"    alt="MIT class of 2026 graduation">
       <img src="images/kayak.jpg"         alt="kayaker in helmet and life vest">
-      <img src="images/skyline-night.jpg" alt="city skyline at night">
       <img src="images/flatiron.jpg"      alt="flatiron building with taxis">
       <img src="images/sailboat.jpg"      alt="sailboat with yellow sail">
       <img src="images/city-street.jpg"   alt="city street with traffic">
