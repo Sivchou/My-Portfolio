@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Siv R — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Anton&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#1f2d4d; --gold:#c9a227; --mauve:#c9a397; --gray-frame:#8f8b83;
@@ -32,7 +32,7 @@ img,svg{max-width:100%;}
   background:var(--gold); transition:transform .35s cubic-bezier(.65,0,.35,1), background .35s; z-index:0;
   transform:translateX(calc(100% + 4px));}
 [data-mode="boring"] .toggle .highlight{transform:translateX(0); background:var(--boring-accent);}
-.toggle button{position:relative; z-index:1; border:none; background:transparent; color:#999; font-family:'Oswald',sans-serif; font-size:12px;
+.toggle button{position:relative; z-index:1; border:none; background:transparent; color:#999; font-family:'JetBrains Mono',monospace; font-size:12px;
   letter-spacing:.5px; padding:7px 16px; border-radius:999px; cursor:pointer; transition:color .25s, transform .15s;}
 .toggle button:active{transform:scale(.93);}
 .toggle button.active{color:#111; font-weight:600;}
@@ -79,29 +79,32 @@ img,svg{max-width:100%;}
 .strip.oval .eye{flex:2; height:14px; border-radius:50%; background:var(--gold); border:2px solid #2a2116;}
 .strip.oval .sq{flex:1; height:10px; background:var(--navy); border:2px solid var(--mauve);}
 
-.sign-caption{text-align:center; color:#c9c3b0; font-size:11px; letter-spacing:1.5px; margin-top:2px; text-transform:uppercase;}
+.sign-caption{text-align:center; color:#c9c3b0; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1px; margin-top:2px; text-transform:uppercase;}
 
 /* ---------- WELCOME PHOTO BUTTON ---------- */
 .welcome-panel{display:block; width:100%; padding:0; border:none; background:none; cursor:pointer; overflow:hidden; line-height:0;}
 .welcome-panel img{display:block; width:100%; height:auto; transition:transform .3s ease, filter .3s ease;}
 .welcome-panel:hover img{transform:scale(1.02); filter:brightness(1.1);}
-.welcome-caption{text-align:center; color:#c9c3b0; font-size:11px; letter-spacing:1.5px; margin-top:2px; text-transform:uppercase;}
+.welcome-caption{text-align:center; color:#c9c3b0; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1px; margin-top:2px; text-transform:uppercase;}
 
 /* ---------- GALLERY PAGE ---------- */
 .page-gallery{max-width:820px; width:100%; text-align:center; padding:70px 20px;}
-.back-btn{background:none; border:2px solid var(--gold); color:var(--cream); font-family:'Oswald',sans-serif;
-  font-size:12px; letter-spacing:1.5px; text-transform:uppercase; padding:8px 18px; border-radius:999px; cursor:pointer; margin-bottom:30px;}
+.back-btn{background:none; border:2px solid var(--gold); color:var(--cream); font-family:'JetBrains Mono',monospace;
+  font-size:12px; letter-spacing:1px; text-transform:uppercase; padding:8px 18px; border-radius:999px; cursor:pointer; margin-bottom:30px;}
 .back-btn:hover{background:var(--gold); color:#111;}
 .gallery-title{font-family:'Anton',sans-serif; font-size:clamp(28px,6vw,44px); letter-spacing:1px; color:var(--cream); margin:0 0 14px; text-transform:uppercase;}
-.gallery-placeholder{color:#c9c3b0; font-size:15px; letter-spacing:.5px;}
+.gallery-placeholder{color:#c9c3b0; font-family:'JetBrains Mono',monospace; font-size:14px; letter-spacing:.3px;}
 [data-page="gallery"] #page-home{display:none;}
 [data-page="home"] #page-gallery{display:none;}
 
-/* ---------- BORING MODE (intentionally blank) ---------- */
+/* ---------- BORING MODE ---------- */
 html[data-mode="boring"], html[data-mode="boring"] body{background-image:none; background-color:var(--boring-bg);}
 [data-mode="boring"] .wall, [data-mode="boring"] .fun-only{display:none;}
-[data-mode="boring"] .boring-only{display:block;}
-.boring-only{display:none; min-height:calc(100vh - 60px);}
+[data-mode="boring"] .boring-only{display:flex;}
+.boring-only{display:none; min-height:calc(100vh - 60px); align-items:center; justify-content:center;
+  font-family:'JetBrains Mono',monospace; color:var(--boring-ink); font-size:clamp(14px,3vw,18px); letter-spacing:.5px; text-align:center; padding:20px;}
+.boring-only a{color:var(--boring-accent); text-decoration:none; border-bottom:1px solid var(--boring-accent);}
+.boring-only a:hover{opacity:.75;}
 </style>
 </head>
 <body>
@@ -148,7 +151,7 @@ html[data-mode="boring"], html[data-mode="boring"] body{background-image:none; b
 </div>
 </div>
 
-<div class="boring-only" id="boring-only"></div>
+<div class="boring-only" id="boring-only">in progress....<a href="https://instagram.com/siv.awr" target="_blank" rel="noopener">@siv.awr</a></div>
 
 <script>
 const LETTERS = {
